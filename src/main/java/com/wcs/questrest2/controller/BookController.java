@@ -65,4 +65,8 @@ public class BookController {
     bookRepository.deleteById(id);
   }
 
-   }
+  @GetMapping("/search/{query}")
+  public List<Book> searchBook(@PathVariable String query) {
+    return bookRepository.searchBook(query);
+  }
+}
